@@ -1,0 +1,54 @@
+{
+    "mappings": [
+        {
+            "request": {
+                "method": "GET",
+                "url": "/hello"
+            },
+            "response": {
+                "status": 200,
+                "bodyFileName": "hello_get.json"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "/hello"
+            },
+            "response": {
+                "status": 200,
+                "bodyFileName": "hello_post.json"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "urlPathPattern": "/hello",
+                "queryParameters" : {
+                    "testing" : {
+                        "equalTo" : "WireMock"
+                    }
+                }
+            },
+            "response": {
+                "status": 200,
+                "bodyFileName": "hello_get_param.json"
+            }
+        },
+        {
+            "request":{
+                "method": "GET",
+                "url": "/hello",
+                "headers":{
+                    "X-STUB":{
+                        "equalTo": "true"
+                    }
+                }
+            },
+            "response": {
+                "status": 200,
+                "bodyFileName": "hello_get_header.json"
+            }
+        }
+    ]
+}
